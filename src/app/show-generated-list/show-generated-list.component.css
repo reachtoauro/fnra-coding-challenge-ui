@@ -1,0 +1,64 @@
+:host{
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text{
+  text-align: center;
+}
+
+mat-accordion{
+  width: 83%;
+  margin: auto;
+  display: block;
+}
+
+mat-expansion-panel,
+mat-expansion-panel-header{
+  width: 100%;
+}
+mat-elevation-z8{
+  width: 85%;
+}
+mat-card{
+  width: 80%;
+  margin: auto;
+}
+
+mat-paginator-container{
+  width: 85%;
+}
+mat-form-field,
+input[type="text"]{
+width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-paginator{
+  margin-top: 1rem;
+}  
+
+
+mat-body-1{
+  width: 85%;
+}
+
+.table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.td, .th {
+  width: 25%;
+}
+
+hr{
+  width: 85%;
+}

@@ -1,0 +1,40 @@
+<mat-card>
+    <form (submit)="generate(mobileInputForm)" #mobileInputForm="ngForm">
+    <mat-form-field>
+        <input 
+        matInput
+        type="text" 
+        name="phoneNumber" 
+        ngModel 
+        placeholder="Phone Number" 
+        required
+        minlength="7"
+        #phoneNumber="ngModel">
+        <mat-error *ngIf="phoneNumber.invalid">Please enter a valid 7 or 10 digit phone number</mat-error>
+    </mat-form-field>
+        <button color="primary" mat-raised-button >Generate</button>
+    </form>
+    </mat-card>
+<hr>
+
+<mat-accordion multi="true" *ngIf="!isLoading">
+    <mat-expansion-panel *ngFor="let combination of combinations">
+      <mat-expansion-panel-header>
+          {{ combination.combination }}
+      </mat-expansion-panel-header>
+</mat-expansion-panel>
+</mat-accordion>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangePage($event)"></mat-paginator>
+
+
+<div class="mat-elevation-z8">
+    <table mat-table >
+      <!-- ID Column -->
+      <ng-container matColumnDef="id" *ngFor="let combination of combinations">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Combinations </th>
+        <td mat-cell *matCellDef="let row"> {{ combination.combination }} </td>
+      </ng-container>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
